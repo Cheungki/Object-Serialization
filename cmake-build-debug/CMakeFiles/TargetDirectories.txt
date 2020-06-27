@@ -1,0 +1,3 @@
+/Users/zhangqi/CLionProjects/object_serialization/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/zhangqi/CLionProjects/object_serialization/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zhangqi/CLionProjects/object_serialization/cmake-build-debug/CMakeFiles/object_serialization.dir
