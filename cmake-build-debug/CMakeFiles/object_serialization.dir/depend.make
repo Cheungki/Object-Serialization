@@ -6,6 +6,7 @@ CMakeFiles/object_serialization.dir/binary_serialization.cpp.o: ../binary_serial
 
 CMakeFiles/object_serialization.dir/main.cpp.o: ../main.cpp
 CMakeFiles/object_serialization.dir/main.cpp.o: ../tinyxml2.h
+CMakeFiles/object_serialization.dir/main.cpp.o: ../xml_serialization.h
 
 CMakeFiles/object_serialization.dir/tinyxml2.cpp.o: ../tinyxml2.cpp
 CMakeFiles/object_serialization.dir/tinyxml2.cpp.o: ../tinyxml2.h

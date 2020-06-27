@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangqi/CLionProjects/object_serialization/binary_serialization.cpp
-binary_serialization.h
-/Users/zhangqi/CLionProjects/object_serialization/binary_serialization.h
-
-/Users/zhangqi/CLionProjects/object_serialization/binary_serialization.h
-
-/Users/zhangqi/CLionProjects/object_serialization/main.cpp
-iostream
--
-vector
--
-string
--
-tinyxml2.h
-/Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
-
 /Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
 ctype.h
 -
