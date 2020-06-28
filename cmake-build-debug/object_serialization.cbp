@@ -86,6 +86,12 @@
 		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/binary_serialization.h">
 			<Option target="object_serialization"/>
 		</Unit>
+		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/convert_to_char.cpp">
+			<Option target="object_serialization"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h">
+			<Option target="object_serialization"/>
+		</Unit>
 		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/main.cpp">
 			<Option target="object_serialization"/>
 		</Unit>

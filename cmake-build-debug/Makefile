@@ -150,6 +150,33 @@ binary_serialization.cpp.s:
 	$(MAKE) -f CMakeFiles/object_serialization.dir/build.make CMakeFiles/object_serialization.dir/binary_serialization.cpp.s
 .PHONY : binary_serialization.cpp.s
 
+convert_to_char.o: convert_to_char.cpp.o
+
+.PHONY : convert_to_char.o
+
+# target to build an object file
+convert_to_char.cpp.o:
+	$(MAKE) -f CMakeFiles/object_serialization.dir/build.make CMakeFiles/object_serialization.dir/convert_to_char.cpp.o
+.PHONY : convert_to_char.cpp.o
+
+convert_to_char.i: convert_to_char.cpp.i
+
+.PHONY : convert_to_char.i
+
+# target to preprocess a source file
+convert_to_char.cpp.i:
+	$(MAKE) -f CMakeFiles/object_serialization.dir/build.make CMakeFiles/object_serialization.dir/convert_to_char.cpp.i
+.PHONY : convert_to_char.cpp.i
+
+convert_to_char.s: convert_to_char.cpp.s
+
+.PHONY : convert_to_char.s
+
+# target to generate assembly for a file
+convert_to_char.cpp.s:
+	$(MAKE) -f CMakeFiles/object_serialization.dir/build.make CMakeFiles/object_serialization.dir/convert_to_char.cpp.s
+.PHONY : convert_to_char.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -243,6 +270,9 @@ help:
 	@echo "... binary_serialization.o"
 	@echo "... binary_serialization.i"
 	@echo "... binary_serialization.s"
+	@echo "... convert_to_char.o"
+	@echo "... convert_to_char.i"
+	@echo "... convert_to_char.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

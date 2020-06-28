@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    int temp = 10;
-    serialize_xml(temp, "Test", "../Int.xml");
+    string temp = "hello world";
+    serialize_xml(temp, "Test", "../test.xml");
     return 0;
 }

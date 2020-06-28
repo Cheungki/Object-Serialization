@@ -15,15 +15,52 @@
 
 using namespace std;
 
-bool createXML(const string&, const string&); /* Create the basic XML structure for the object of type T. */
+bool createXML(const string&); /* Create the basic XML structure for the object of type T. */
 
-bool serialize_xml(int object, const string& name, const string& filename);
-
-bool serialize_xml(float object, const string &name, const string &filename);
-
-bool serialize_xml(double object, const string &name, const string &filename);
-
-bool serialize_xml(const string& object, const string &name, const string &filename);
+template <typename T>
+bool serialize_xml(T object, const string& name, const string& filename)
+{
+    if(!createXML(filename)) {
+        tinyxml2::XMLDocument doc;
+        bool isNotLoaded = doc.LoadFile(filename.c_str());
+        if(isNotLoaded) {
+            cout << "Failed to load XML file." << endl;
+            return false;
+        }
+        else {
+            tinyxml2::XMLElement* root = doc.RootElement();
+            tinyxml2::XMLElement* node = doc.NewElement(name.c_str());
+            tinyxml2::XMLElement* subnode;
+            if(typeid(T) == typeid(int)) {
+                subnode = doc.NewElement("int");
+                subnode->InsertEndChild(doc.NewText(to_string(object).c_str()));
+            }
+            else if(typeid(T) == typeid(float)) {
+                subnode = doc.NewElement("float");
+                subnode->InsertEndChild(doc.NewText(to_string(object).c_str()));
+            }
+            else if(typeid(T) == typeid(double)) {
+                subnode = doc.NewElement("double");
+                subnode->InsertEndChild(doc.NewText(to_string(object).c_str()));
+            }
+            else if(typeid(T) == typeid(char)) {
+                subnode = doc.NewElement("char");
+                subnode->InsertEndChild(doc.NewText(object));
+            }
+            else if(typeid(T) == typeid(string)) {
+                subnode = doc.NewElement("string");
+                subnode->InsertEndChild(doc.NewText(object));
+            }
+            node->InsertEndChild(subnode);
+            root->InsertEndChild(node);
+        }
+        return doc.SaveFile(filename.c_str());
+    }
+    else {
+        cout << "Failed to create XML document." << endl;
+        return false;
+    }
+}
 
 template <typename T1, typename T2>
 bool serialize_xml(pair<T1, T2> object, const string &name, const string &filename);
