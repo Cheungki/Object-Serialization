@@ -39,6 +39,8 @@ xml_serialization.h
 /Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
 convert_to_char.h
 /Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h
+xml_deserialization.h
+/Users/zhangqi/CLionProjects/object_serialization/xml_deserialization.h
 
 /Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
 ctype.h
@@ -70,7 +72,25 @@ android/log.h
 assert.h
 -
 
-/Users/zhangqi/CLionProjects/object_serialization/xml_serialization.cpp
+/Users/zhangqi/CLionProjects/object_serialization/xml_deserialization.cpp
+xml_deserialization.h
+/Users/zhangqi/CLionProjects/object_serialization/xml_deserialization.h
+
+/Users/zhangqi/CLionProjects/object_serialization/xml_deserialization.h
+iostream
+-
+string
+-
+vector
+-
+queue
+-
+cstdlib
+-
+tinyxml2.h
+/Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
+convert_to_char.h
+/Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h
 xml_serialization.h
 /Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
 

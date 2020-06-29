@@ -11,10 +11,17 @@ CMakeFiles/object_serialization.dir/main.cpp.o
  /Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h
  /Users/zhangqi/CLionProjects/object_serialization/main.cpp
  /Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
+ /Users/zhangqi/CLionProjects/object_serialization/xml_deserialization.h
  /Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
 CMakeFiles/object_serialization.dir/tinyxml2.cpp.o
  /Users/zhangqi/CLionProjects/object_serialization/tinyxml2.cpp
  /Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
+CMakeFiles/object_serialization.dir/xml_deserialization.cpp.o
+ /Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h
+ /Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
+ /Users/zhangqi/CLionProjects/object_serialization/xml_deserialization.cpp
+ /Users/zhangqi/CLionProjects/object_serialization/xml_deserialization.h
+ /Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
 CMakeFiles/object_serialization.dir/xml_serialization.cpp.o
  /Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h
  /Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h

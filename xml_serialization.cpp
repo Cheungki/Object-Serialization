@@ -6,7 +6,7 @@
 
 using namespace std;
 
-bool document::createXML(const string& filename) /* Create the basic XML structure for the object of type T. */
+bool serializing_xml::createXML(const string& filename) /* Create the basic XML structure for the object of type T. */
 {
     tinyxml2::XMLDocument doc;
     string declaration = R"(<?xml version="1.0" encoding="UTF-8" standalone="no"?>)";

@@ -17,7 +17,7 @@
 
 using namespace std;
 
-class document {
+class serializing_xml {
 public:
     static bool createXML(const string &); /* Create the basic XML structure for the object of type T. */
 

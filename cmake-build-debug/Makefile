@@ -231,6 +231,33 @@ tinyxml2.cpp.s:
 	$(MAKE) -f CMakeFiles/object_serialization.dir/build.make CMakeFiles/object_serialization.dir/tinyxml2.cpp.s
 .PHONY : tinyxml2.cpp.s
 
+xml_deserialization.o: xml_deserialization.cpp.o
+
+.PHONY : xml_deserialization.o
+
+# target to build an object file
+xml_deserialization.cpp.o:
+	$(MAKE) -f CMakeFiles/object_serialization.dir/build.make CMakeFiles/object_serialization.dir/xml_deserialization.cpp.o
+.PHONY : xml_deserialization.cpp.o
+
+xml_deserialization.i: xml_deserialization.cpp.i
+
+.PHONY : xml_deserialization.i
+
+# target to preprocess a source file
+xml_deserialization.cpp.i:
+	$(MAKE) -f CMakeFiles/object_serialization.dir/build.make CMakeFiles/object_serialization.dir/xml_deserialization.cpp.i
+.PHONY : xml_deserialization.cpp.i
+
+xml_deserialization.s: xml_deserialization.cpp.s
+
+.PHONY : xml_deserialization.s
+
+# target to generate assembly for a file
+xml_deserialization.cpp.s:
+	$(MAKE) -f CMakeFiles/object_serialization.dir/build.make CMakeFiles/object_serialization.dir/xml_deserialization.cpp.s
+.PHONY : xml_deserialization.cpp.s
+
 xml_serialization.o: xml_serialization.cpp.o
 
 .PHONY : xml_serialization.o
@@ -279,6 +306,9 @@ help:
 	@echo "... tinyxml2.o"
 	@echo "... tinyxml2.i"
 	@echo "... tinyxml2.s"
+	@echo "... xml_deserialization.o"
+	@echo "... xml_deserialization.i"
+	@echo "... xml_deserialization.s"
 	@echo "... xml_serialization.o"
 	@echo "... xml_serialization.i"
 	@echo "... xml_serialization.s"

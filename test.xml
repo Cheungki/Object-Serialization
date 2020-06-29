@@ -2,44 +2,21 @@
 <serialization>
     <std_pair>
         <first>
-            <int_0 val="1"/>
-            <int_1 val="2"/>
-            <int_2 val="3"/>
-            <int_3 val="4"/>
-            <int_4 val="5"/>
+            <int_0 val="6"/>
+            <int_1 val="7"/>
+            <int_2 val="8"/>
+            <int_3 val="9"/>
+            <int_4 val="10"/>
         </first>
-        <second val="1.230000"/>
-    </std_pair>
-    <std_pair>
-        <first>
-            <pair_0>
-                <pair val=""/>
-            </pair_0>
-            <pair_1>
-                <pair val=""/>
-            </pair_1>
-        </first>
-        <second val="1.230000"/>
-    </std_pair>
-    <std_pair>
-        <first>
-            <pair_0>
-                <first val="1"/>
-                <second val="a"/>
-            </pair_0>
-            <pair_1>
-                <first val="2"/>
-                <second val="b"/>
-            </pair_1>
-        </first>
-        <second val="1.230000"/>
-    </std_pair>
-    <std_pair>
-        <key val="1"/>
-        <value val="student_one"/>
-        <key val="2"/>
-        <value val="student_two"/>
-        <key val="3"/>
-        <value val="student_three"/>
+        <second>
+            <first>
+                <int_0 val="1"/>
+                <int_1 val="2"/>
+                <int_2 val="3"/>
+                <int_3 val="4"/>
+                <int_4 val="5"/>
+            </first>
+            <second val="1.230000"/>
+        </second>
     </std_pair>
 </serialization>
