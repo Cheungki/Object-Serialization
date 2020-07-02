@@ -101,12 +101,6 @@
 		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h">
 			<Option target="object_serialization"/>
 		</Unit>
-		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/xml_deserialization.cpp">
-			<Option target="object_serialization"/>
-		</Unit>
-		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/xml_deserialization.h">
-			<Option target="object_serialization"/>
-		</Unit>
 		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/xml_serialization.cpp">
 			<Option target="object_serialization"/>
 		</Unit>

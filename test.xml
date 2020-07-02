@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<serialization>
-    <std_pair>
-        <first>
-            <int_0 val="0"/>
-            <int_1 val="1"/>
-            <int_2 val="2"/>
-            <int_3 val="3"/>
-            <int_4 val="4"/>
-        </first>
-        <second>
-            <first>
-                <int_0 val="5"/>
-                <int_1 val="6"/>
-                <int_2 val="7"/>
-                <int_3 val="8"/>
-                <int_4 val="9"/>
-            </first>
-            <second val="2.330000"/>
-        </second>
-    </std_pair>
-</serialization>
+<UserDefinedType>
+    <element_1>
+        <int val="1"/>
+    </element_1>
+    <element_2>
+        <basic_string val="zhangqi"/>
+    </element_2>
+    <element_3>
+        <double_0 val="1.100000"/>
+        <double_1 val="2.200000"/>
+    </element_3>
+</UserDefinedType>
