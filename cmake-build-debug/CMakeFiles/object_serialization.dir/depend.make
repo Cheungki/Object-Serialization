@@ -3,10 +3,13 @@
 
 CMakeFiles/object_serialization.dir/binary_serialization.cpp.o: ../binary_serialization.cpp
 CMakeFiles/object_serialization.dir/binary_serialization.cpp.o: ../binary_serialization.h
+CMakeFiles/object_serialization.dir/binary_serialization.cpp.o: ../convert_to_char.h
+CMakeFiles/object_serialization.dir/binary_serialization.cpp.o: ../tinyxml2.h
 
 CMakeFiles/object_serialization.dir/convert_to_char.cpp.o: ../convert_to_char.cpp
 CMakeFiles/object_serialization.dir/convert_to_char.cpp.o: ../convert_to_char.h
 
+CMakeFiles/object_serialization.dir/main.cpp.o: ../binary_serialization.h
 CMakeFiles/object_serialization.dir/main.cpp.o: ../convert_to_char.h
 CMakeFiles/object_serialization.dir/main.cpp.o: ../main.cpp
 CMakeFiles/object_serialization.dir/main.cpp.o: ../tinyxml2.h
