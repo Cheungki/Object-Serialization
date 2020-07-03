@@ -21,10 +21,14 @@ namespace binarySerialization
 {
     class serializing_binary {
     public:
+        /* The constructor of this class. */
         serializing_binary() :position(0) {}
 
+        /* Variable position is to store the position we are reading currently. */
         int position;
 
+        /* Function: serialize(T object, const string &filename)
+         * Description: Serialize the arithemetic type variables,write the information in binary form. */
         template <typename T>
         bool serialize(T object, const string &filename)
         {
@@ -34,6 +38,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:serialize(pair<T1, T2> object, const string &filename)
+         * Description: Deal with stl:pair,handle the variables in a recursive way. */
         template <typename T1, typename T2>
         bool serialize(pair<T1, T2> object, const string &filename)
         {
@@ -42,6 +48,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:serialize(vector<T> object, const string &filename)
+         * Description: Deal with stl:vector,write the information in a recursive way,for other stl contained. */
         template <typename T>
         bool serialize(vector<T> object, const string &filename)
         {
@@ -54,6 +62,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:serialize(list<T> object, const string &filename)
+         * Description: Deal with stl:list,write the information in a recursive way, for other stl contained. */
         template <typename T>
         bool serialize(list<T> object, const string &filename)
         {
@@ -66,6 +76,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:serialize(set<T> object, const string &filename)
+         * Description: Deal with stl:set,write the information in a recursive way,for other stl contained. */
         template <typename T>
         bool serialize(set<T> object, const string &filename)
         {
@@ -78,6 +90,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:serialize(map<T1, T2> object, const string &filename)
+         * Description: Deal with stl:map,write the information in a recursive way,for other stl contained. */
         template <typename T1, typename T2>
         bool serialize(map<T1, T2> object, const string &filename)
         {
@@ -90,6 +104,9 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:deserialize(T &object, const string &filename)
+         * Description: Deserialize the arithemetic type variables,read the binary
+         * information from the file and move the position for further read*/
         template <typename T>
         bool deserialize(T &object, const string &filename)
         {
@@ -101,6 +118,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:deserialize(T &object, const string &filename)
+         * Description: Deserialize the stl:pair. */
         template <typename T1, typename T2>
         bool deserialize(pair<T1, T2> &object, const string &filename)
         {
@@ -109,6 +128,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:deserialize(vector<T> &object, const string &filename)
+         * Description: Deserialize the stl:vector. */
         template <typename T>
         bool deserialize(vector<T> &object, const string &filename)
         {
@@ -126,6 +147,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:deserialize(list<T> &object, const string &filename)
+         * Description: Deserialize the stl:list,get the position first,and read the elements in series. */
         template <typename T>
         bool deserialize(list<T> &object, const string &filename)
         {
@@ -143,6 +166,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:deserialize(set<T> &object, const string &filename)
+         * Description: Deserialize the stl:set,get the position first,and read the elements in series. */
         template <typename T>
         bool deserialize(set<T> &object, const string &filename)
         {
@@ -160,6 +185,8 @@ namespace binarySerialization
             return true;
         }
 
+        /* Function:deserialize(map<T1, T2> &object, const string &filename)
+         * Description: Deserialize the stl:map. */
         template <typename T1, typename T2>
         bool deserialize(map<T1, T2> &object, const string &filename)
         {
@@ -178,10 +205,12 @@ namespace binarySerialization
         }
     };
 
+    /* Function:class UserDefinedType
+     * Description: Deserialize UserDefinedType. */
     class UserDefinedType: public serializing_binary {
     public:
         UserDefinedType() {}
-        UserDefinedType(int element1, string element2, vector<double> element3):idx(element1), name(element2), data(element3) {}
+        UserDefinedType(int element1, string element2,vector<double> element3):idx(element1), name(element2) ,data(element3) {}
         UserDefinedType(UserDefinedType const &source)  : serializing_binary(source) {
             idx = source.idx;
             name = source.name;

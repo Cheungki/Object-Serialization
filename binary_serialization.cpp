@@ -6,6 +6,8 @@
 
 namespace binarySerialization
 {
+    /* Function:UserDefinedType::serialize(const string &filename)
+     * Description: construct serialize for UserDefinedType*/
     void UserDefinedType::serialize(const string &filename)
     {
         serializing_binary::serialize(idx, filename);
@@ -13,6 +15,8 @@ namespace binarySerialization
         serializing_binary::serialize(data, filename);
     }
 
+    /* Function: UserDefinedType::serialize(const string &filename)
+     * Description: Construct deserialize for UserDefinedType*/
     void UserDefinedType::deserialize(const string &filename)
     {
         serializing_binary::deserialize(idx, filename);
@@ -20,6 +24,8 @@ namespace binarySerialization
         serializing_binary::deserialize(data, filename);
     }
 
+    /* Function: UserDefinedType::printinfo()
+     * Description: Print the informaiton of the UserDefinedType. */
     void UserDefinedType::printinfo()
     {
         cout << "idx = " << idx << endl;
