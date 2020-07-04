@@ -180,7 +180,7 @@ namespace binarySerialization
             for (i = 0; i < size; i++) {
                 T iter;
                 deserialize(iter, filepath);
-                object.push_back(iter);
+                object.insert(iter);
             }
             return true;
         }
@@ -223,5 +223,6 @@ namespace binarySerialization
         vector<double> data;
     };
 }
+
 
 #endif //OBJECT_SERIALIZATION_BINARY_SERIALIZATION_H

@@ -134,12 +134,12 @@ namespace xmlSerialization
                 string tag = getType(*iter) + "_" + to_string(i);
                 tinyxml2::XMLElement *subnode_1 = doc.NewElement("key");
                 tinyxml2::XMLElement *subnode_2 = doc.NewElement("value");
-                subnode_1->SetAttribute("type", getType(iter->first));
-                subnode_2->SetAttribute("type", getType(iter->second));
                 if (isSTL(iter->first)) InsertSTLNode(iter->first, doc, subnode_1);
                 else subnode_1->SetAttribute("val", convert(iter->first));
                 if (isSTL(iter->second)) InsertSTLNode(iter->second, doc, subnode_2);
                 else subnode_2->SetAttribute("val", convert(iter->second));
+                subnode_1->SetAttribute("type", getType(iter->first).c_str());
+                subnode_2->SetAttribute("type", getType(iter->second).c_str());
                 node->InsertEndChild(subnode_1);
                 node->InsertEndChild(subnode_2);
                 i++;
@@ -395,7 +395,7 @@ namespace xmlSerialization
             while (position < *end) {
                 T temp;
                 write(temp, contents, pos, position);
-                object.push_back(temp);
+                object.insert(temp);
             }
         }
 
@@ -411,7 +411,7 @@ namespace xmlSerialization
                 T2 second;
                 write(first, contents, pos, position);
                 write(second, contents, pos, position);
-                object.push_back(make_pair(first, second));
+                object.insert(make_pair(first, second));
             }
         }
 

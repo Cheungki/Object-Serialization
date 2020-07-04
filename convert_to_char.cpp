@@ -2,6 +2,8 @@
 // Created by 张琦 on 2020/6/28.
 //
 
+#include <sstream>
+#include <iomanip>
 #include "convert_to_char.h"
 
 const char *convert(int object)
@@ -14,7 +16,9 @@ const char *convert(int object)
 
 const char *convert(float object)
 {
-    string value = to_string(object);
+    std::ostringstream ss;
+    ss << std::setprecision(7) << object;
+    string value = ss.str();
     char *result = new char[value.length()];
     strcpy(result, value.c_str());
     return result;
@@ -22,7 +26,9 @@ const char *convert(float object)
 
 const char *convert(double object)
 {
-    string value = to_string(object);
+    std::ostringstream ss;
+    ss << std::setprecision(16) << object;
+    string value = ss.str();
     char *result = new char[value.length()];
     strcpy(result, value.c_str());
     return result;

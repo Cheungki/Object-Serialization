@@ -45,21 +45,13 @@ cxxabi.h
 -
 
 /Users/zhangqi/CLionProjects/object_serialization/main.cpp
-iostream
--
-vector
--
-string
--
-typeinfo
--
-utility
--
 merge.h
 /Users/zhangqi/CLionProjects/object_serialization/merge.h
 
 /Users/zhangqi/CLionProjects/object_serialization/merge.h
 string
+-
+cstdio
 -
 xml_serialization.h
 /Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
@@ -95,10 +87,6 @@ android/log.h
 -
 assert.h
 -
-
-/Users/zhangqi/CLionProjects/object_serialization/xml_serialization.cpp
-xml_serialization.h
-/Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
 
 /Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
 iostream

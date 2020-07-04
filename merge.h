@@ -6,6 +6,7 @@
 #define OBJECT_SERIALIZATION_MERGE_H
 
 #include <string>
+#include <cstdio>
 #include "xml_serialization.h"
 #include "binary_serialization.h"
 
@@ -14,20 +15,24 @@
 template <typename T>
 void serialize(T &object, string filepath)
 {
-    binarySerialization::serializing_binary t;
-    t.serialize(object, filepath);
+    remove(filepath.c_str());
+    auto t = new binarySerialization::serializing_binary;
+    t->serialize(object, filepath);
+    delete t;
 }
 
 void serialize(binarySerialization::UserDefinedType &object, const string& filepath)
 {
+    remove(filepath.c_str());
     object.serialize(filepath);
 }
 
 template <typename T>
 void deserialize(T &object, string filepath)
 {
-    binarySerialization::serializing_binary t;
-    t.deserialize(object, filepath);
+    auto t = new binarySerialization::serializing_binary;
+    t->deserialize(object, filepath);
+    delete t;
 }
 
 void deserialize(binarySerialization::UserDefinedType &object, const string& filepath)
@@ -38,12 +43,15 @@ void deserialize(binarySerialization::UserDefinedType &object, const string& fil
 template <typename T>
 void serialize_xml(T &object, string name, string filepath)
 {
-    xmlSerialization::serializing_xml t;
-    t.serialize_xml(object, name, filepath, VNAME(object));
+    remove(filepath.c_str());
+    auto t = new xmlSerialization::serializing_xml;
+    t->serialize_xml(object, name, filepath, VNAME(object));
+    delete t;
 }
 
 void serialize_xml(xmlSerialization::UserDefinedType &object, const string& name, const string& filepath)
 {
+    remove(filepath.c_str());
     object.serialize_xml(name, filepath);
 }
 
