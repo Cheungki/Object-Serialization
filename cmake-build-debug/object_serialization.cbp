@@ -95,6 +95,9 @@
 		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/main.cpp">
 			<Option target="object_serialization"/>
 		</Unit>
+		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/merge.h">
+			<Option target="object_serialization"/>
+		</Unit>
 		<Unit filename="/Users/zhangqi/CLionProjects/object_serialization/tinyxml2.cpp">
 			<Option target="object_serialization"/>
 		</Unit>

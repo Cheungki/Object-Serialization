@@ -8,14 +8,14 @@
 
 namespace xmlSerialization
 {
-    bool serializing_xml::createXML(const string &filename) /* Create the basic XML structure for the object of type T. */
+    bool serializing_xml::createXML(const string &filepath) /* Create the basic XML structure for the object of type T. */
     {
         tinyxml2::XMLDocument doc;
         string declaration = R"(<?xml version="1.0" encoding="UTF-8" standalone="no"?>)";
         doc.Parse(declaration.c_str());
         tinyxml2::XMLElement *root = doc.NewElement("serialization");
         doc.InsertEndChild(root);
-        return doc.SaveFile(filename.c_str());
+        return doc.SaveFile(filepath.c_str());
     }
 
     void serializing_xml::read(tinyxml2::XMLElement *&node, std::vector<const char *> &v, std::vector<int> &pos)
@@ -74,34 +74,40 @@ namespace xmlSerialization
         position++;
     }
 
+    void serializing_xml::write(bool &object, vector<const char *> &contents, vector<int> &pos, int &position)
+    {
+        object = strcmp(contents[position], "true") == 0;
+        position++;
+    }
+
     void serializing_xml::write(string &object, vector<const char *> &contents, vector<int> &pos, int &position)
     {
         object = contents[position];
         position++;
     }
 
-    bool UserDefinedType::createXML(const string &filename)
+    bool UserDefinedType::createXML(const string &filename, const string &filepath)
     {
         tinyxml2::XMLDocument doc;
         string declaration = R"(<?xml version="1.0" encoding="UTF-8" standalone="no"?>)";
         doc.Parse(declaration.c_str());
-        tinyxml2::XMLElement *root = doc.NewElement("UserDefinedType");
+        tinyxml2::XMLElement *root = doc.NewElement(filename.c_str());
         doc.InsertEndChild(root);
-        return doc.SaveFile(filename.c_str());
+        return doc.SaveFile(filepath.c_str());
     }
 
-    void UserDefinedType::serialize_xml(const string &filename)
+    void UserDefinedType::serialize_xml(const string &filename, const string &filepath)
     {
-        createXML(filename);
-        serializing_xml::serialize_xml(idx, "element_1", filename, VNAME(idx));
-        serializing_xml::serialize_xml(name, "element_2", filename, VNAME(name));
-        serializing_xml::serialize_xml(data, "element_3", filename, VNAME(data));
+        createXML(filename, filepath);
+        serializing_xml::serialize_xml(idx, "element_1", filepath, VNAME(idx));
+        serializing_xml::serialize_xml(name, "element_2", filepath, VNAME(name));
+        serializing_xml::serialize_xml(data, "element_3", filepath, VNAME(data));
     }
 
-    void UserDefinedType::deserialize_xml(const string &filename)
+    void UserDefinedType::deserialize_xml(const string &filename, const string &filepath)
     {
-        serializing_xml::deserialize_xml(idx, "element_1", filename);
-        serializing_xml::deserialize_xml(name, "element_2", filename);
-        serializing_xml::deserialize_xml(data, "element_3", filename);
+        serializing_xml::deserialize_xml(idx, "element_1", filepath);
+        serializing_xml::deserialize_xml(name, "element_2", filepath);
+        serializing_xml::deserialize_xml(data, "element_3", filepath);
     }
 }

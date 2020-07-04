@@ -21,17 +21,16 @@ namespace xmlSerialization
 {
     class serializing_xml {
     public:
-        /* Function: static bool createXML(const string &filename)
+        /* Function: static bool createXML(const string &filepath)
          * Description: Create the basic XML structure for the object of type T. */
-        virtual bool createXML(const string &);
+        static bool createXML(const string &);
 
         /* Function: bool isSTL(T object)
          * Description: Identify if the object of type T is in STL. */
         template<typename T>
         bool isSTL(T object)
         {
-            string type = getType(object);
-            return !(type == "int" || type == "float" || type == "double" || type == "char" || type == "string");
+            return !(is_arithmetic<T>::value || typeid(object).name() == typeid(string).name());
         }
 
         /* Function: InsertNode(T object, tinyxml2::XMLDocument &doc, tinyxml2::XMLElement *&node)
@@ -151,19 +150,19 @@ namespace xmlSerialization
             }
         }
 
-        /* Function: serialize_xml(T object, const string &name, const string &filename)
+        /* Function: serialize_xml(T object, const string &name, const string &filepath)
          * Description: To create an XML file, if necessary, and serialize object of
          * type T to xml format. */
         template<typename T>
-        bool serialize_xml(T object, const string &name, const string &filename, const string &variableName)
+        bool serialize_xml(T object, const string &name, const string &filepath, const string &variableName)
         {
-            ifstream fin(filename.c_str());
-            if (!fin && createXML(filename)) {
+            ifstream fin(filepath.c_str());
+            if (!fin && createXML(filepath)) {
                 cout << "Failed to create XML document." << endl;
                 return false;
             }
             tinyxml2::XMLDocument doc;
-            bool isNotLoaded = doc.LoadFile(filename.c_str());
+            bool isNotLoaded = doc.LoadFile(filepath.c_str());
             if (isNotLoaded) {
                 cout << "Failed to load XML file." << endl;
                 return false;
@@ -175,22 +174,22 @@ namespace xmlSerialization
                 InsertNode(object, doc, node);
                 root->InsertEndChild(node);
             }
-            return doc.SaveFile(filename.c_str());
+            return doc.SaveFile(filepath.c_str());
         }
 
-        /* Fuction: serialize_xml(pair<T1, T2> object, const string &name, const string &filename)
+        /* Fuction: serialize_xml(pair<T1, T2> object, const string &name, const string &filepath)
          * Description: To create an XML file, if necessary, and serialize object of type
          * pair<T1, T2> to xml format. */
         template<typename T1, typename T2>
-        bool serialize_xml(pair<T1, T2> object, const string &name, const string &filename, const string &variableName)
+        bool serialize_xml(pair<T1, T2> object, const string &name, const string &filepath, const string &variableName)
         {
-            ifstream fin(filename.c_str());
-            if (!fin && createXML(filename)) {
+            ifstream fin(filepath.c_str());
+            if (!fin && createXML(filepath)) {
                 cout << "Failed to create XML document." << endl;
                 return false;
             }
             tinyxml2::XMLDocument doc;
-            bool isNotLoaded = doc.LoadFile(filename.c_str());
+            bool isNotLoaded = doc.LoadFile(filepath.c_str());
             if (isNotLoaded) {
                 cout << "Failed to load XML file." << endl;
                 return false;
@@ -202,22 +201,22 @@ namespace xmlSerialization
                 InsertSTLNode(object, doc, node);
                 root->InsertEndChild(node);
             }
-            return doc.SaveFile(filename.c_str());
+            return doc.SaveFile(filepath.c_str());
         }
 
-        /* Function: serialize_xml(vector<T> object, const string &name, const string &filename)
+        /* Function: serialize_xml(vector<T> object, const string &name, const string &filepath)
          * Description: To create an XML file, if necessary, and serialize object of
          * type vector<T> to xml format. */
         template<typename T>
-        bool serialize_xml(vector<T> object, const string &name, const string &filename, const string &variableName)
+        bool serialize_xml(vector<T> object, const string &name, const string &filepath, const string &variableName)
         {
-            ifstream fin(filename.c_str());
-            if (!fin && createXML(filename)) {
+            ifstream fin(filepath.c_str());
+            if (!fin && createXML(filepath)) {
                 cout << "Failed to create XML document." << endl;
                 return false;
             }
             tinyxml2::XMLDocument doc;
-            bool isNotLoaded = doc.LoadFile(filename.c_str());
+            bool isNotLoaded = doc.LoadFile(filepath.c_str());
             if (isNotLoaded) {
                 cout << "Failed to load XML file." << endl;
                 return false;
@@ -229,22 +228,22 @@ namespace xmlSerialization
                 InsertSTLNode(object, doc, node);
                 root->InsertEndChild(node);
             }
-            return doc.SaveFile(filename.c_str());
+            return doc.SaveFile(filepath.c_str());
         }
 
-        /* Function: serialize_xml(list<T> object, const string &name, const string &filename)
+        /* Function: serialize_xml(list<T> object, const string &name, const string &filepath)
          * Description: To create an XML file, if necessary, and serialize object of
          * type list<T> to xml format. */
         template<typename T>
-        bool serialize_xml(list<T> object, const string &name, const string &filename, const string &variableName)
+        bool serialize_xml(list<T> object, const string &name, const string &filepath, const string &variableName)
         {
-            ifstream fin(filename.c_str());
-            if (!fin && createXML(filename)) {
+            ifstream fin(filepath.c_str());
+            if (!fin && createXML(filepath)) {
                 cout << "Failed to create XML document." << endl;
                 return false;
             }
             tinyxml2::XMLDocument doc;
-            bool isNotLoaded = doc.LoadFile(filename.c_str());
+            bool isNotLoaded = doc.LoadFile(filepath.c_str());
             if (isNotLoaded) {
                 cout << "Failed to load XML file." << endl;
                 return false;
@@ -256,22 +255,22 @@ namespace xmlSerialization
                 InsertSTLNode(object, doc, node);
                 root->InsertEndChild(node);
             }
-            return doc.SaveFile(filename.c_str());
+            return doc.SaveFile(filepath.c_str());
         }
 
-        /* Function: serialize_xml(set<T> object, const string &name, const string &filename)
+        /* Function: serialize_xml(set<T> object, const string &name, const string &filepath)
          * Description: To create an XML file, if necessary, and serialize object of
          * type set<T> to xml format. */
         template<typename T>
-        bool serialize_xml(set<T> object, const string &name, const string &filename, const string &variableName)
+        bool serialize_xml(set<T> object, const string &name, const string &filepath, const string &variableName)
         {
-            ifstream fin(filename.c_str());
-            if (!fin && createXML(filename)) {
+            ifstream fin(filepath.c_str());
+            if (!fin && createXML(filepath)) {
                 cout << "Failed to create XML document." << endl;
                 return false;
             }
             tinyxml2::XMLDocument doc;
-            bool isNotLoaded = doc.LoadFile(filename.c_str());
+            bool isNotLoaded = doc.LoadFile(filepath.c_str());
             if (isNotLoaded) {
                 cout << "Failed to load XML file." << endl;
                 return false;
@@ -291,22 +290,22 @@ namespace xmlSerialization
                 }
                 root->InsertEndChild(node);
             }
-            return doc.SaveFile(filename.c_str());
+            return doc.SaveFile(filepath.c_str());
         }
 
-        /* Fuction: serialize_xml(map<T1, T2> object, const string &name, const string &filename)
+        /* Fuction: serialize_xml(map<T1, T2> object, const string &name, const string &filepath)
          * Description: To create an XML file, if necessary, and serialize object of type
          * map<T1, T2> to xml format. */
         template<typename T1, typename T2>
-        bool serialize_xml(map<T1, T2> object, const string &name, const string &filename, const string &variableName)
+        bool serialize_xml(map<T1, T2> object, const string &name, const string &filepath, const string &variableName)
         {
-            ifstream fin(filename.c_str());
-            if (!fin && createXML(filename)) {
+            ifstream fin(filepath.c_str());
+            if (!fin && createXML(filepath)) {
                 cout << "Failed to create XML document." << endl;
                 return false;
             }
             tinyxml2::XMLDocument doc;
-            bool isNotLoaded = doc.LoadFile(filename.c_str());
+            bool isNotLoaded = doc.LoadFile(filepath.c_str());
             if (isNotLoaded) {
                 cout << "Failed to load XML file." << endl;
                 return false;
@@ -318,7 +317,7 @@ namespace xmlSerialization
                 InsertSTLNode(object, doc, node);
                 root->InsertEndChild(node);
             }
-            return doc.SaveFile(filename.c_str());
+            return doc.SaveFile(filepath.c_str());
         }
 
         /* Fuction: read(tinyxml2::XMLElement *&node, vector<const char *> &contents, vector<int> &pos)
@@ -344,6 +343,10 @@ namespace xmlSerialization
         /* Fuction: write(char &object, vector<const char *> &contents, vector<int> &pos, int &position);
          * Description: Write the data saved in contents[position] to object. */
         static void write(char &object, vector<const char *> &contents, vector<int> &pos, int &position);
+
+        /* Fuction: write(bool &object, vector<const char *> &contents, vector<int> &pos, int &position);
+         * Description: Write the data saved in contents[position] to object. */
+        static void write(bool &object, vector<const char *> &contents, vector<int> &pos, int &position);
 
         /* Fuction: write(string &object, vector<const char *> &contents, vector<int> &pos, int &position);
          * Description: Write the data saved in contents[position] to object. */
@@ -416,13 +419,13 @@ namespace xmlSerialization
             }
         }
 
-        /* Function: deserialize_xml(T &object, const string &name, const string &filename)
+        /* Function: deserialize_xml(T &object, const string &name, const string &filepath)
          * Description: The main function for deserializing. */
         template<typename T>
-        bool deserialize_xml(T &object, const string &name, const string &filename)
+        bool deserialize_xml(T &object, const string &name, const string &filepath)
         {
             tinyxml2::XMLDocument doc;
-            bool isNotLoaded = doc.LoadFile(filename.c_str());
+            bool isNotLoaded = doc.LoadFile(filepath.c_str());
             if (isNotLoaded) {
                 cout << "Failed to load XML file." << endl;
                 return false;
@@ -461,15 +464,15 @@ namespace xmlSerialization
 
         /* Function: createXML(const string &) override
          * An override for createXML() function in class serializing_xml.*/
-        bool createXML(const string &) override;
+        static bool createXML(const string &, const string &);
 
         /* Function: serialize_xml(const string &)
          * An overloaded function for serialize this UserDefinedType data structure. */
-        void serialize_xml(const string &);
+        void serialize_xml(const string &, const string &);
 
         /* Function: deserialize_xml(const string &)
          * An overloaded function for deserialize this UserDefinedType data structure. */
-        void deserialize_xml(const string &);
+        void deserialize_xml(const string &, const string &);
 
         void printinfo()
         {

@@ -6,26 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangqi/CLionProjects/object_serialization/binary_serialization.h
-iostream
--
-typeinfo
--
-string
--
-list
--
-set
--
-map
--
-fstream
--
-convert_to_char.h
-/Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h
-tinyxml2.h
-/Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
-
 /Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h
 iostream
 -
@@ -43,20 +23,6 @@ map
 -
 cxxabi.h
 -
-
-/Users/zhangqi/CLionProjects/object_serialization/main.cpp
-iostream
--
-vector
--
-string
--
-utility
--
-xml_serialization.h
-/Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
-binary_serialization.h
-/Users/zhangqi/CLionProjects/object_serialization/binary_serialization.h
 
 /Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
 ctype.h
@@ -87,6 +53,10 @@ android/log.h
 -
 assert.h
 -
+
+/Users/zhangqi/CLionProjects/object_serialization/xml_serialization.cpp
+xml_serialization.h
+/Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
 
 /Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
 iostream

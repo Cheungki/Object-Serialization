@@ -36,6 +36,8 @@ const char *convert(double);
 
 const char *convert(char);
 
+const char *convert(bool);
+
 const char *convert(const string&);
 
 template <typename T1, typename T2>

@@ -36,6 +36,12 @@ const char *convert(char object)
     return result;
 }
 
+const char *convert(bool object)
+{
+    if(object) return "true";
+    else return "false";
+}
+
 const char *convert(const string& object)
 {
     char *result = new char[object.length()];

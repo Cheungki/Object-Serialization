@@ -6,22 +6,22 @@
 
 namespace binarySerialization
 {
-    /* Function:UserDefinedType::serialize(const string &filename)
+    /* Function:UserDefinedType::serialize(const string &filepath)
      * Description: construct serialize for UserDefinedType*/
-    void UserDefinedType::serialize(const string &filename)
+    void UserDefinedType::serialize(const string &filepath)
     {
-        serializing_binary::serialize(idx, filename);
-        serializing_binary::serialize(name, filename);
-        serializing_binary::serialize(data, filename);
+        serializing_binary::serialize(idx, filepath);
+        serializing_binary::serialize(name, filepath);
+        serializing_binary::serialize(data, filepath);
     }
 
-    /* Function: UserDefinedType::serialize(const string &filename)
+    /* Function: UserDefinedType::serialize(const string &filepath)
      * Description: Construct deserialize for UserDefinedType*/
-    void UserDefinedType::deserialize(const string &filename)
+    void UserDefinedType::deserialize(const string &filepath)
     {
-        serializing_binary::deserialize(idx, filename);
-        serializing_binary::deserialize(name, filename);
-        serializing_binary::deserialize(data, filename);
+        serializing_binary::deserialize(idx, filepath);
+        serializing_binary::deserialize(name, filepath);
+        serializing_binary::deserialize(data, filepath);
     }
 
     /* Function: UserDefinedType::printinfo()
