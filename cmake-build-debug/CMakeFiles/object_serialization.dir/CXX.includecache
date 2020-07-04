@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+/Users/zhangqi/CLionProjects/object_serialization/binary_serialization.h
+iostream
+-
+typeinfo
+-
+string
+-
+list
+-
+set
+-
+map
+-
+fstream
+-
+convert_to_char.h
+/Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h
+tinyxml2.h
+/Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
+
 /Users/zhangqi/CLionProjects/object_serialization/convert_to_char.h
 iostream
 -
@@ -23,6 +43,28 @@ map
 -
 cxxabi.h
 -
+
+/Users/zhangqi/CLionProjects/object_serialization/main.cpp
+iostream
+-
+vector
+-
+string
+-
+typeinfo
+-
+utility
+-
+merge.h
+/Users/zhangqi/CLionProjects/object_serialization/merge.h
+
+/Users/zhangqi/CLionProjects/object_serialization/merge.h
+string
+-
+xml_serialization.h
+/Users/zhangqi/CLionProjects/object_serialization/xml_serialization.h
+binary_serialization.h
+/Users/zhangqi/CLionProjects/object_serialization/binary_serialization.h
 
 /Users/zhangqi/CLionProjects/object_serialization/tinyxml2.h
 ctype.h

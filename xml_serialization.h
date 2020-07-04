@@ -60,11 +60,9 @@ namespace xmlSerialization
             node->SetAttribute("type", "pair");
             tinyxml2::XMLElement *subnode_1 = doc.NewElement("first");
             tinyxml2::XMLElement *subnode_2 = doc.NewElement("second");
-            if (!is_arithmetic<T1>::value && getType(object.first) != "basic_string")
-                InsertSTLNode(object.first, doc, subnode_1);
+            if (isSTL(object.first)) InsertSTLNode(object.first, doc, subnode_1);
             else subnode_1->SetAttribute("val", convert(object.first));
-            if (!is_arithmetic<T2>::value && getType(object.second) != "basic_string")
-                InsertSTLNode(object.second, doc, subnode_2);
+            if (isSTL(object.second)) InsertSTLNode(object.second, doc, subnode_2);
             else subnode_2->SetAttribute("val", convert(object.second));
             node->InsertEndChild(subnode_1);
             node->InsertEndChild(subnode_2);
@@ -138,11 +136,9 @@ namespace xmlSerialization
                 tinyxml2::XMLElement *subnode_2 = doc.NewElement("value");
                 subnode_1->SetAttribute("type", getType(iter->first));
                 subnode_2->SetAttribute("type", getType(iter->second));
-                if (!is_arithmetic<T1>::value && getType(iter->first) != "basic_string")
-                    InsertSTLNode(iter->first, doc, subnode_1);
+                if (isSTL(iter->first)) InsertSTLNode(iter->first, doc, subnode_1);
                 else subnode_1->SetAttribute("val", convert(iter->first));
-                if (!is_arithmetic<T2>::value && getType(iter->second) != "basic_string")
-                    InsertSTLNode(iter->second, doc, subnode_2);
+                if (isSTL(iter->second)) InsertSTLNode(iter->second, doc, subnode_2);
                 else subnode_2->SetAttribute("val", convert(iter->second));
                 node->InsertEndChild(subnode_1);
                 node->InsertEndChild(subnode_2);
