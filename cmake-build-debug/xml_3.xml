@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<serialization>
-    <std_char variableName="object" type="char">
-        <char val="a"/>
-    </std_char>
-</serialization>
