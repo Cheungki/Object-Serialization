@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<serialization>
+    <std_set variableName="object" type="set">
+        <int_0 val="1"/>
+        <int_1 val="2"/>
+        <int_2 val="3"/>
+    </std_set>
+</serialization>
