@@ -12,6 +12,7 @@
 #include <set>
 #include <map>
 #include <fstream>
+#include<algorithm>
 #include "convert_to_char.h"
 #include "tinyxml2.h"
 

@@ -38,6 +38,16 @@ namespace binarySerialization
             return true;
         }
 
+        bool serialize(string object, const string &filepath)
+        {
+            int size = object.size(), i;
+            ofstream outFile(filepath.c_str(), ios::out | ios::binary | ios::app);
+            outFile.write((char *)&size, sizeof(size));
+            outFile.close();
+            for (i = 0; i < size; i++) serialize(object[i], filepath);
+            return true;
+        }
+
         /* Function:serialize(pair<T1, T2> object, const string &filepath)
          * Description: Deal with stl:pair,handle the variables in a recursive way. */
         template <typename T1, typename T2>
@@ -118,7 +128,23 @@ namespace binarySerialization
             return true;
         }
 
-        /* Function:deserialize(T &object, const string &filepath)
+        bool deserialize(string &object, const string &filepath)
+        {
+            int size, i;
+            ifstream inFile(filepath.c_str(), ios::in | ios::binary);
+            inFile.seekg(position);
+            inFile.read((char*)&size, sizeof(size));
+            position += sizeof(size);
+            inFile.close();
+            for (i = 0; i < size; i++) {
+                char temp;
+                deserialize(temp, filepath);
+                object += temp;
+            }
+            return true;
+        }
+
+        /* Function:deserialize(pair<T1, T2> &object, const string &filepath)
          * Description: Deserialize the stl:pair. */
         template <typename T1, typename T2>
         bool deserialize(pair<T1, T2> &object, const string &filepath)

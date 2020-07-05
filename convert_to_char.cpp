@@ -6,6 +6,36 @@
 #include <iomanip>
 #include "convert_to_char.h"
 
+string getType(int object)
+{
+    return "int";
+}
+
+string getType(float object)
+{
+    return "float";
+}
+
+string getType(double object)
+{
+    return "double";
+}
+
+string getType(char object)
+{
+    return "char";
+}
+
+string getType(bool object)
+{
+    return "bool";
+}
+
+string getType(string object)
+{
+    return "string";
+}
+
 const char *convert(int object)
 {
     string value = to_string(object);
@@ -50,7 +80,7 @@ const char *convert(bool object)
 
 const char *convert(const string& object)
 {
-    char *result = new char[object.length()];
+    char *result = new char[object.length() + 1];
     strcpy(result, object.c_str());
     return result;
 }

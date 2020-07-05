@@ -99,14 +99,14 @@ namespace xmlSerialization
     void UserDefinedType::serialize_xml(const string &filename, const string &filepath)
     {
         createXML(filename, filepath);
-        serializing_xml::serialize_xml(idx, "element_1", filepath, VNAME(idx));
+       // serializing_xml::serialize_xml(idx, "element_1", filepath, VNAME(idx));
         serializing_xml::serialize_xml(name, "element_2", filepath, VNAME(name));
         serializing_xml::serialize_xml(data, "element_3", filepath, VNAME(data));
     }
 
     void UserDefinedType::deserialize_xml(const string &filename, const string &filepath)
     {
-        serializing_xml::deserialize_xml(idx, "element_1", filepath);
+       // serializing_xml::deserialize_xml(idx, "element_1", filepath);
         serializing_xml::deserialize_xml(name, "element_2", filepath);
         serializing_xml::deserialize_xml(data, "element_3", filepath);
     }

@@ -8,24 +8,54 @@
 #include <iostream>
 #include <typeinfo>
 #include <string>
+#include <string.h>
 #include <vector>
 #include <list>
 #include <set>
 #include <map>
-#include <cxxabi.h>
 
 using namespace std;
 
-template <typename T>
-string getType(T object)
+string getType(int object);
+
+string getType(float object);
+
+string getType(double object);
+
+string getType(char object);
+
+string getType(bool object);
+
+string getType(string object);
+
+template <typename T1, typename T2>
+string getType(pair<T1, T2> object)
 {
-    string type = abi::__cxa_demangle(typeid(object).name(), nullptr, nullptr, nullptr);
-    if(is_arithmetic<T>::value || type.find(':') == string::npos) return type;
-    else {
-        int pos = type.find('<');
-        type = type.substr(10, pos - 10);
-        return type;
-    }
+    return "pair";
+}
+
+template <typename T>
+string getType(vector<T> object)
+{
+    return "vector";
+}
+
+template <typename T>
+string getType(list<T> object)
+{
+    return "list";
+}
+
+template <typename T>
+string getType(set<T> object)
+{
+    return "set";
+}
+
+template <typename T1, typename T2>
+string getType(map<T1, T2> object)
+{
+    return "map";
 }
 
 const char *convert(int);
